@@ -27,9 +27,9 @@ export const SearchCommand = () => {
   const isOpen = useSearch((store) => store.isOpen);
   const onClose = useSearch((store) => store.onClose);
 
-  //   useEffect(() => {
-  //     setIsMounted(true);
-  //   }, []);
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   useEffect(() => {
     const down = (e: KeyboardEvent) => {
@@ -48,9 +48,9 @@ export const SearchCommand = () => {
     onClose();
   };
 
-  //   if (!isMounted) {
-  //     return null;
-  //   }
+  if (!isMounted) {
+    return null;
+  }
 
   return (
     <CommandDialog open={isOpen} onOpenChange={onClose}>
